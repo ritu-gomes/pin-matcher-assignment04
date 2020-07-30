@@ -94,7 +94,8 @@
         }
         else{
             document.getElementById("notMatched").style.display = "block";
-            var chances = parseFloat(document.getElementById("tries").innerHTML)
+            if(document.getElementById("actionLeft").innerHTML != "sorry! could not varify the pin"){
+                var chances = parseFloat(document.getElementById("tries").innerHTML)
             if(chances >= 0){
                 document.getElementById("tries").innerHTML = chances - 1;
             }
@@ -102,6 +103,7 @@
                 document.getElementById("actionLeft").innerHTML = "sorry! could not varify the pin";
                 document.getElementById("typeThePin").value = "";
                 document.getElementById("thePin").value = "";
+            }
             }
         }
     });
