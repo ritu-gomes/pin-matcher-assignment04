@@ -91,10 +91,12 @@
             document.getElementById("matched").style.display = "block";
             document.getElementById("notMatched").style.display = "none";
             document.getElementById("actionLeft").innerHTML = "";
+            document.getElementById("typeThePin").value = "";
+            document.getElementById("thePin").value = "";
         }
         else{
             document.getElementById("notMatched").style.display = "block";
-            if(document.getElementById("actionLeft").innerHTML != "sorry! could not varify the pin"){
+            if(document.getElementById("tries")){
                 var chances = parseFloat(document.getElementById("tries").innerHTML)
             if(chances >= 0){
                 document.getElementById("tries").innerHTML = chances - 1;
