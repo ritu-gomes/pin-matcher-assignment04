@@ -55,11 +55,14 @@
         </div>
     </div>
 <script>
+    const time = document.getElementById("actionLeft").innerHTML;
     // generating random number
     document.getElementById("generatePin").addEventListener("click",function(){
         document.getElementById("thePin").value = Math.floor(1000 + Math.random() * 9000);
+        //for another generation
         document.getElementById("matched").style.display = "none";
         document.getElementById("notMatched").style.display = "none";
+        document.getElementById("actionLeft").innerHTML = time;
     });
     //pin confirmation
     var button = document.getElementsByClassName("digit");
@@ -87,6 +90,7 @@
         if(usersPin == confirmPin && confirmPin != 0){
             document.getElementById("matched").style.display = "block";
             document.getElementById("notMatched").style.display = "none";
+            document.getElementById("actionLeft").innerHTML = "";
         }
         else{
             document.getElementById("notMatched").style.display = "block";
